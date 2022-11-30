@@ -11,6 +11,8 @@ author = 'Dr. Mian Asbat Ahmad'
 release = '0.0.1'
 
 
+import myst_parser
+
 
 
 # -- General configuration ---------------------------------------------------
