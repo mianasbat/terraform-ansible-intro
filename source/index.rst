@@ -10,7 +10,12 @@ Welcome to Terraform-Ansible-Intro documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   Create_ec2_from_console
+   lab1
+   lab2
+   lab3
+   lab4
+   lab5
+   lab5
 
 Indices and tables
 ==================
