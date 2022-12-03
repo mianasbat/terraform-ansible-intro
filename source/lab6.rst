@@ -24,8 +24,8 @@ Setup control node
 
 .. code:: bash
 
-	# useradd ansible-user
-	# password ansible-user
+    # useradd ansible-user
+    # password ansible-user
     # password123
 
 1. Add privileges to the user ansible-user
