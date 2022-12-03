@@ -80,35 +80,35 @@
 <li><p>Connect to the control node</p></li>
 <li><p>Switch to root user</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$ sudo -i
-~#
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo -i
+<span class="c1">#</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
 <li><p>Update the package list</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~# yum update -y
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># yum update -y</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
 <li><p>Create a new user ansible-user</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    ~# useradd ansible-user
-    ~# password ansible-user
-~# password123
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># useradd ansible-user</span>
+    <span class="c1"># password ansible-user</span>
+<span class="c1"># password123</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
 <li><p>Add privileges to the user ansible-user</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~# usermod -aG wheel ansible-user
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># usermod -aG wheel ansible-user</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
 <li><p>Switch to that user</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~# su - ansible-user
-~$
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># su - ansible-user</span>
+$
 </pre></div>
 </div>
 <ol class="arabic simple">
@@ -137,14 +137,15 @@ systemctl restart sshd
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible --version
 </pre></div>
 </div>
-<p>7. Create a folder in home directory i.e.
-.. code:: bash</p>
-<blockquote>
-<div><p>cd
+<ol class="arabic simple" start="7">
+<li><p>Create a folder in home directory i.e.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>
 mkdir ansible-dir
-cd ansible-dir
-touch hosts</p>
-</div></blockquote>
+<span class="nb">cd</span> ansible-dir
+touch hosts
+</pre></div>
+</div>
 </section>
 
 

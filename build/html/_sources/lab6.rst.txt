@@ -11,36 +11,36 @@ Setup control node
 
 .. code:: bash
 
-	~$ sudo -i
-	~# 
+	$ sudo -i
+	# 
 
 1. Update the package list
 
 .. code:: bash
 
-	~# yum update -y
+	# yum update -y
 
 1. Create a new user ansible-user
 
 .. code:: bash
 
-	~# useradd ansible-user
-	~# password ansible-user
-    ~# password123
+	# useradd ansible-user
+	# password ansible-user
+    # password123
 
 1. Add privileges to the user ansible-user
 
 .. code:: bash
 
-	~# usermod -aG wheel ansible-user
+	# usermod -aG wheel ansible-user
 
 
 1. Switch to that user
 
 .. code:: bash
 
-	~# su - ansible-user
-	~$
+	# su - ansible-user
+	$
 
 1. Now generate ssh keys
 
@@ -71,8 +71,9 @@ Setup control node
 	ansible --version
 
 7. Create a folder in home directory i.e.
-.. code:: bash
 
+.. code:: bash
+	
 	cd
 	mkdir ansible-dir
 	cd ansible-dir
