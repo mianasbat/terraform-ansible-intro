@@ -2,7 +2,6 @@ Ansible setup lab 6:
 ====================
 
 Setup control node
-------------------
 
 1. Pick one of the ec-2 instance we created in Lab 5 as control node
 
@@ -41,20 +40,7 @@ press enter three times to accept all the defaults.
 
 5. Now enable password based authentication
 ```
-nano /etc/ssh/sshd_config
-Change the following two lines 
-#PasswordAuthentication yes
-to
-PasswordAuthentication yes
-
-and
-PasswordAuthentication no
-to
-PasswordAuthentication yes
-
-ctrl+x
-save changes
-exit
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 
 Now restart sshd
 systemctl restart sshd
