@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hands on Lab 2: &mdash; Terraform-Ansible-Intro 0.0.1 documentation</title>
+  <title>Setup Terraform: &mdash; Terraform-Ansible-Intro 0.0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Hands on Lab 3:" href="lab3.html" />
-    <link rel="prev" title="Hands on Lab 1:" href="lab1.html" /> 
+    <link rel="prev" title="EC2 instance from AWS Console:" href="lab1.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,8 +41,13 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Hands on Lab 1:</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Hands on Lab 2:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab1.html">EC2 instance from AWS Console:</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup Terraform:</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mac">Mac:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows">Windows:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linux">Linux:</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="lab3.html">Hands on Lab 3:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab4.html">Hands on Lab 4:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab5.html">Hands on Lab 5:</a></li>
@@ -63,7 +68,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Hands on Lab 2:</li>
+      <li class="breadcrumb-item active">Setup Terraform:</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/lab2.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -73,15 +78,66 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="hands-on-lab-2">
-<h1>Hands on Lab 2:<a class="headerlink" href="#hands-on-lab-2" title="Permalink to this heading"></a></h1>
+  <section id="setup-terraform">
+<h1>Setup Terraform:<a class="headerlink" href="#setup-terraform" title="Permalink to this heading"></a></h1>
+<p>Steps to install Terraform on Mac, Windows and Linux are given on the Terraform website <a class="reference external" href="https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli#install-terraform">https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli#install-terraform</a>. Feel free to install it from the Terraform website or follow the steps as per your operating system.</p>
+<section id="mac">
+<h2>Mac:<a class="headerlink" href="#mac" title="Permalink to this heading"></a></h2>
+<p>Step 1: Install home brew using the following command, if it is not installed. For more details visit <a class="reference external" href="https://brew.sh/">https://brew.sh/</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ /bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Step 2: Install the HashiCorp tap, a repository of all our Homebrew packages.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ brew tap hashicorp/tap
+</pre></div>
+</div>
+<p>Step 3: install Terraform with hashicorp/tap/terraform.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ brew install hashicorp/tap/terraform
+</pre></div>
+</div>
+</section>
+<section id="windows">
+<h2>Windows:<a class="headerlink" href="#windows" title="Permalink to this heading"></a></h2>
+<p>Step 1: Open powershell with administrative privileges</p>
+<figure class="align-default">
+<img alt="open-powershell with administrative privileges" src="_images/open-powershell.png" />
+</figure>
+<p>Step 2: Run the following command in the powershell to install Chocolatey given on website <a class="reference external" href="https://chocolatey.org/install">https://chocolatey.org/install</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Set-ExecutionPolicy Bypass -Scope Process -Force<span class="p">;</span> <span class="o">[</span>System.Net.ServicePointManager<span class="o">]</span>::SecurityProtocol <span class="o">=</span> <span class="o">[</span>System.Net.ServicePointManager<span class="o">]</span>::SecurityProtocol -bor <span class="m">3072</span><span class="p">;</span> iex <span class="o">((</span>New-Object System.Net.WebClient<span class="o">)</span>.DownloadString<span class="o">(</span><span class="s1">&#39;https://community.chocolatey.org/install.ps1&#39;</span><span class="o">))</span>
+</pre></div>
+</div>
+<p>Step 3: Now install terraform using the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>choco install terraform
+</pre></div>
+</div>
+<p>Step 4: Verify the terraform installation by running the following command to get terraform help.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terraform -help
+</pre></div>
+</div>
+</section>
+<section id="linux">
+<h2>Linux:<a class="headerlink" href="#linux" title="Permalink to this heading"></a></h2>
+<p>Follow the following steps for Ubuntu OS</p>
+<p>Step 1: Run the command to update the package list</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
+</pre></div>
+</div>
+<p>Step 2: To install terraform run the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install terraform
+</pre></div>
+</div>
+<p>Step 3: To verify installation</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terraform -help
+</pre></div>
+</div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="lab1.html" class="btn btn-neutral float-left" title="Hands on Lab 1:" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lab1.html" class="btn btn-neutral float-left" title="EC2 instance from AWS Console:" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="lab3.html" class="btn btn-neutral float-right" title="Hands on Lab 3:" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
