@@ -46,3 +46,20 @@ Create a file `main.tf` and paste the following code in it.
     }
 
 
+Now run the commands
+
+.. code:: bash
+
+    terraform init
+    terraform plan
+    terraform apply
+
+Now login to EC console and check the ec2 instances section
+
+To destroy the EC2 instance
+
+run the command
+
+.. code:: bash
+
+    terraform destroy
