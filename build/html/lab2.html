@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Setup Terraform: &mdash; Terraform-Ansible-Intro 0.0.1 documentation</title>
+  <title>Setup the environment: &mdash; Terraform-Ansible-Intro 0.0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -42,10 +42,16 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="lab1.html">EC2 instance from AWS Console:</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup Terraform:</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup the environment:</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-terraform">Install Terraform:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mac">Mac:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#windows">Windows:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#linux">Linux:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-aws-cli">Install AWS CLI:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Mac:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Windows:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Linux:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-aws-cli">Configure AWS CLI:</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="lab3.html">Hands on Lab 3:</a></li>
@@ -68,7 +74,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Setup Terraform:</li>
+      <li class="breadcrumb-item active">Setup the environment:</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/lab2.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -78,9 +84,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="setup-terraform">
-<h1>Setup Terraform:<a class="headerlink" href="#setup-terraform" title="Permalink to this heading"></a></h1>
+  <section id="setup-the-environment">
+<h1>Setup the environment:<a class="headerlink" href="#setup-the-environment" title="Permalink to this heading"></a></h1>
+<p>This section describes how to install, verify and configure AWS CLI and Terraform on our systems.</p>
+<section id="install-terraform">
+<h2>Install Terraform:<a class="headerlink" href="#install-terraform" title="Permalink to this heading"></a></h2>
 <p>Steps to install Terraform on Mac, Windows and Linux are given on the Terraform website <a class="reference external" href="https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli#install-terraform">https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli#install-terraform</a>. Feel free to install it from the Terraform website or follow the steps as per your operating system.</p>
+</section>
 <section id="mac">
 <h2>Mac:<a class="headerlink" href="#mac" title="Permalink to this heading"></a></h2>
 <p>Step 1: Install home brew using the following command, if it is not installed. For more details visit <a class="reference external" href="https://brew.sh/">https://brew.sh/</a></p>
@@ -130,6 +140,51 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terraform -help
 </pre></div>
 </div>
+</section>
+<section id="install-aws-cli">
+<h2>Install AWS CLI:<a class="headerlink" href="#install-aws-cli" title="Permalink to this heading"></a></h2>
+<p>Steps to install AWS CLI on Mac, Windows and Linux are given on the AWS documentation website <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html</a>. Feel free to install it from the Terraform website or follow the steps as per your operating system.</p>
+</section>
+<section id="id1">
+<h2>Mac:<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<p>Step 1: Download the package</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://awscli.amazonaws.com/AWSCLIV2.pkg&quot;</span> -o <span class="s2">&quot;AWSCLIV2.pkg&quot;</span>
+</pre></div>
+</div>
+<p>Step 2: Install the package</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo installer -pkg ./AWSCLIV2.pkg -target /
+</pre></div>
+</div>
+<p>Step 3: Verify installation</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which aws
+aws --version
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>Windows:<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<p>Step 1: To Download and Install the AWS CLI, run the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>choco install awscli
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>Linux:<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<p>Step 1: To Download and Install the AWS CLI, run the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip&quot;</span> -o <span class="s2">&quot;awscliv2.zip&quot;</span>
+</pre></div>
+</div>
+<p>Step 2: Unzip the downloaded package</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip awscliv2.zip
+</pre></div>
+</div>
+<p>Step 3: Install the package</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo ./aws/install
+</pre></div>
+</div>
+</section>
+<section id="configure-aws-cli">
+<h2>Configure AWS CLI:<a class="headerlink" href="#configure-aws-cli" title="Permalink to this heading"></a></h2>
 </section>
 </section>
 

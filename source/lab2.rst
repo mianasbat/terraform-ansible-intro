@@ -1,5 +1,10 @@
+Setup the environment:
+======================
+
+This section describes how to install, verify and configure AWS CLI and Terraform on our systems.
+
 Install Terraform:
-================
+------------------
 
 Steps to install Terraform on Mac, Windows and Linux are given on the Terraform website https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli#install-terraform. Feel free to install it from the Terraform website or follow the steps as per your operating system. 
 
@@ -75,3 +80,71 @@ Step 3: To verify installation
 .. code:: bash
 
     terraform -help
+
+
+Install AWS CLI:
+----------------
+
+Steps to install AWS CLI on Mac, Windows and Linux are given on the AWS documentation website https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html. Feel free to install it from the Terraform website or follow the steps as per your operating system. 
+
+Mac:
+----
+
+Step 1: Download the package
+
+.. code:: bash
+
+    curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+    
+
+Step 2: Install the package
+
+.. code:: bash
+
+    sudo installer -pkg ./AWSCLIV2.pkg -target /
+
+Step 3: Verify installation
+
+.. code:: bash
+
+    which aws
+    aws --version
+
+
+Windows:
+--------
+
+Step 1: To Download and Install the AWS CLI, run the command
+
+.. code:: bash
+
+    choco install awscli
+
+
+Linux:
+------
+
+Step 1: To Download and Install the AWS CLI, run the command
+
+.. code:: bash
+
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+
+Step 2: Unzip the downloaded package
+
+.. code:: bash
+
+    unzip awscliv2.zip
+
+
+Step 3: Install the package
+
+.. code:: bash
+
+    sudo ./aws/install
+
+
+Configure AWS CLI:
+------------------
+
