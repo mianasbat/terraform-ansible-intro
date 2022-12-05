@@ -1,4 +1,4 @@
-EC2 instance from AWS Console:
+EC2 instance using AWS Console:
 ==============================
 
 In this section we will do a hands on lab to do two tasks. Task 1 is to create an ec2 instance from the AWS Console and task 2 is to destroy the ec2 instance. Follow the following steps to complete the lab.
