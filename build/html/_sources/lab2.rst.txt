@@ -157,6 +157,6 @@ Step 2: Run the command `aws configure` to start the configuration of AWS CLI. P
     aws configure
     AWS Access Key ID [None]: PASTE YOUR ACCESS KEY 
     AWS Secret Access Key [None]: PASTE YOUR SECRET KEY
-    Default region name [None]: us-east-1
+    Default region name [None]: us-west-2
     Default output format [None]: json
 

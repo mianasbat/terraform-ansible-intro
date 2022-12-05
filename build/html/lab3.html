@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hands on Lab 3: &mdash; Terraform-Ansible-Intro 0.0.1 documentation</title>
+  <title>EC2 instance using Terraform: &mdash; Terraform-Ansible-Intro 0.0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -41,9 +41,9 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">EC2 instance from AWS Console:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab1.html">EC2 instance using AWS Console:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab2.html">Setup the environment:</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Hands on Lab 3:</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">EC2 instance using Terraform:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab4.html">Hands on Lab 4:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab5.html">Hands on Lab 5:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab6.html">Ansible setup lab 6:</a></li>
@@ -63,7 +63,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Hands on Lab 3:</li>
+      <li class="breadcrumb-item active">EC2 instance using Terraform:</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/lab3.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -73,8 +73,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="hands-on-lab-3">
-<h1>Hands on Lab 3:<a class="headerlink" href="#hands-on-lab-3" title="Permalink to this heading"></a></h1>
+  <section id="ec2-instance-using-terraform">
+<h1>EC2 instance using Terraform:<a class="headerlink" href="#ec2-instance-using-terraform" title="Permalink to this heading"></a></h1>
+<p>If lab-2 is working fine then you are all good to create EC2 instance using terraform.</p>
+<p>Create a directory <cite>terraform-config</cite> in the home directory</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir ~/terraform-config
+</pre></div>
+</div>
+<p>Change directory to terraform-config</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/terraform-config
+</pre></div>
+</div>
+<p>Create a file <cite>main.tf</cite> and paste the following code in it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terraform <span class="o">{</span>
+required_providers <span class="o">{</span>
+    <span class="nv">aws</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="nb">source</span>  <span class="o">=</span> <span class="s2">&quot;hashicorp/aws&quot;</span>
+    <span class="nv">version</span> <span class="o">=</span> <span class="s2">&quot;~&gt; 4.16&quot;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nv">required_version</span> <span class="o">=</span> <span class="s2">&quot;&gt;= 1.2.0&quot;</span>
+<span class="o">}</span>
+
+provider <span class="s2">&quot;aws&quot;</span> <span class="o">{</span>
+<span class="nv">region</span>  <span class="o">=</span> <span class="s2">&quot;us-west-2&quot;</span>
+<span class="o">}</span>
+
+resource <span class="s2">&quot;aws_instance&quot;</span> <span class="s2">&quot;app_server&quot;</span> <span class="o">{</span>
+<span class="nv">ami</span>           <span class="o">=</span> <span class="s2">&quot;ami-830c94e3&quot;</span>
+<span class="nv">instance_type</span> <span class="o">=</span> <span class="s2">&quot;t2.micro&quot;</span>
+
+<span class="nv">tags</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="nv">Name</span> <span class="o">=</span> <span class="s2">&quot;ExampleAppServerInstance&quot;</span>
+<span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
 </section>
 
 
