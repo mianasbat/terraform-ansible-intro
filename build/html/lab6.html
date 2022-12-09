@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ansible setup lab 6: &mdash; Terraform-Ansible-Intro 0.0.1 documentation</title>
+  <title>Hands on Lab 5: &mdash; Terraform-Ansible-Intro 0.0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,7 +20,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Hands on Lab 5:" href="lab5.html" /> 
+    <link rel="next" title="Ansible setup lab 6:" href="lab7.html" />
+    <link rel="prev" title="Hands on Lab 4:" href="lab5.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,10 +43,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="lab1.html">EC2 instance using AWS Console:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab2.html">Setup the environment:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab3.html">EC2 instance using Terraform:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab4.html">Hands on Lab 4:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab5.html">Hands on Lab 5:</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Ansible setup lab 6:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab3.html">Create Access Keys:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab4.html">EC2 instance using Terraform:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab5.html">Hands on Lab 4:</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hands on Lab 5:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab7.html">Ansible setup lab 6:</a></li>
 </ul>
 
         </div>
@@ -62,7 +64,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Ansible setup lab 6:</li>
+      <li class="breadcrumb-item active">Hands on Lab 5:</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/lab6.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -72,87 +74,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ansible-setup-lab-6">
-<h1>Ansible setup lab 6:<a class="headerlink" href="#ansible-setup-lab-6" title="Permalink to this heading"></a></h1>
-<p>Setup control node</p>
-<ol class="arabic simple">
-<li><p>Pick one of the ec-2 instance we created in Lab 5 as control node</p></li>
-<li><p>Connect to the control node</p></li>
-<li><p>Switch to root user</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo -i
-<span class="c1">#</span>
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>Update the package list</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># yum update -y</span>
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>Create a new user ansible-user</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># useradd ansible-user</span>
-<span class="c1"># password ansible-user</span>
-<span class="c1"># password123</span>
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>Add privileges to the user ansible-user</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># usermod -aG wheel ansible-user</span>
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>Switch to that user</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># su - ansible-user</span>
-$
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>Now generate ssh keys</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen
-press enter three <span class="nb">times</span> to accept all the defaults.
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>Now enable password based authentication</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sed -i <span class="s1">&#39;s/PasswordAuthentication no/PasswordAuthentication yes/g&#39;</span> /etc/ssh/sshd_config
-systemctl restart sshd
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>Now install Ansible</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo amazon-linux-extras install ansible2 -y
-</pre></div>
-</div>
-<ol class="arabic simple" start="6">
-<li><p>verify ansible Setup</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible --version
-</pre></div>
-</div>
-<ol class="arabic simple" start="7">
-<li><p>Create a folder in home directory i.e.</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>
-mkdir ansible-dir
-<span class="nb">cd</span> ansible-dir
-touch hosts
-</pre></div>
-</div>
+  <section id="hands-on-lab-5">
+<h1>Hands on Lab 5:<a class="headerlink" href="#hands-on-lab-5" title="Permalink to this heading"></a></h1>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="lab5.html" class="btn btn-neutral float-left" title="Hands on Lab 5:" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lab5.html" class="btn btn-neutral float-left" title="Hands on Lab 4:" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lab7.html" class="btn btn-neutral float-right" title="Ansible setup lab 6:" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

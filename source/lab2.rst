@@ -145,18 +145,18 @@ Step 3: Install the package
     sudo ./aws/install
 
 
-Configure AWS CLI:
-------------------
+.. Configure AWS CLI:
+.. ------------------
 
-Step 1: Open command prompt on Windows
+.. Step 1: Open command prompt on Windows
 
-Step 2: Run the command `aws configure` to start the configuration of AWS CLI. Provided the required details
+.. Step 2: Run the command `aws configure` to start the configuration of AWS CLI. Provided the required details
 
-.. code:: bash
+.. .. code:: bash
 
-    aws configure
-    AWS Access Key ID [None]: PASTE YOUR ACCESS KEY 
-    AWS Secret Access Key [None]: PASTE YOUR SECRET KEY
-    Default region name [None]: us-west-2
-    Default output format [None]: json
+..     aws configure
+..     AWS Access Key ID [None]: PASTE YOUR ACCESS KEY 
+..     AWS Secret Access Key [None]: PASTE YOUR SECRET KEY
+..     Default region name [None]: us-west-2
+..     Default output format [None]: json
 

@@ -16,6 +16,7 @@ Welcome to Terraform-Ansible-Intro documentation!
    lab4
    lab5
    lab6
+   lab7
 
 Indices and tables
 ==================

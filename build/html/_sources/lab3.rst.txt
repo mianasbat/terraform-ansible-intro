@@ -1,48 +1,66 @@
-EC2 instance using Terraform:
-=============================
+Create Access Keys:
+====================
 
-If lab-2 is working fine then you are all good to create EC2 instance using terraform.
+Step 1:
 
-Create a directory `terraform-config` in the home directory
+.. figure:: images/key1.png
+   :alt: aws login page
 
-.. code:: bash
+|
+|
 
-    mkdir ~/terraform-config
+Step 2:
 
-Change directory to terraform-config
+.. figure:: images/key2.png
+   :alt: aws login page
 
-.. code:: bash
+|
+|
 
-    cd ~/terraform-config
+Step 3:
 
+.. figure:: images/key3.png
+   :alt: aws login page
 
-Create a file `main.tf` and paste the following code in it.
+|
+|
 
+Step 4:
 
-.. code:: bash
+.. figure:: images/key4.png
+   :alt: aws login page
 
-    terraform {
-    required_providers {
-        aws = {
-        source  = "hashicorp/aws"
-        version = "~> 4.16"
-        }
-    }
+|
+|
 
-    required_version = ">= 1.2.0"
-    }
+Step 5:
 
-    provider "aws" {
-    region  = "us-west-2"
-    }
+.. figure:: images/key5.png
+   :alt: aws login page
 
-    resource "aws_instance" "app_server" {
-    ami           = "ami-830c94e3"
-    instance_type = "t2.micro"
+|
+|
 
-    tags = {
-        Name = "ExampleAppServerInstance"
-    }
-    }
+Step 6:
 
+.. figure:: images/key6.png
+   :alt: aws login page
 
+|
+|
+
+Step 7:
+
+.. figure:: images/key7.png
+   :alt: aws login page
+
+|
+|
+
+Step 8:
+
+.. figure:: images/key8.png
+   :alt: aws login page
+
+|
+|
